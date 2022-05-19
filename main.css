@@ -1,0 +1,223 @@
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  max-width: 100vw;
+  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+footer,
+nav {
+  background-color: rgb(34, 34, 34);
+  color: rgb(255, 255, 255);
+}
+
+section,
+nav {
+  display: grid;
+  place-items: center;
+}
+
+section > div {
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes footer-icon-animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes section-camera-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+nav h1 {
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+section .lego-cards p {
+  font-size: 3rem;
+  font-weight: 700;
+}
+section .lego-cards i {
+  font-size: 4rem;
+}
+
+footer .icon-cards > span {
+  font-size: 1.25rem;
+}
+footer button {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+nav {
+  height: 10rem;
+}
+
+section {
+  padding: 3rem 10rem;
+  background-color: rgb(40, 43, 40);
+  grid-template-columns: repeat(auto-fit, minmax(37.5rem, 1fr));
+  gap: 3.5rem;
+}
+section .lego-cards {
+  height: 30rem;
+  width: 100%;
+  max-width: 45rem;
+  border-radius: 1em;
+  position: relative;
+}
+section .lego-cards p {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  display: inline-block;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+section .lego-cards i {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  color: rgb(0, 155, 0);
+  animation: section-camera-animation 2s linear infinite;
+}
+section > div:nth-of-type(1) {
+  background-image: url(./images/student-1.jpeg);
+}
+section > div:nth-of-type(2) {
+  background-image: url(./images/student-2.jpeg);
+}
+section > div:nth-of-type(3) {
+  background-image: url(./images/student-3.jpeg);
+}
+section > div:nth-of-type(4) {
+  background-image: url(./images/student-4.jpeg);
+}
+section > div:nth-of-type(5) {
+  background-image: url(./images/student-5.jpeg);
+}
+section > div:nth-of-type(6) {
+  background-image: url(./images/student-6.jpeg);
+}
+section > div:nth-of-type(7) {
+  background-image: url(./images/student-7.jpeg);
+}
+section > div:nth-of-type(8) {
+  background-image: url(./images/student-8.jpeg);
+}
+section > div:nth-of-type(9) {
+  background-image: url(./images/student-9.jpeg);
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 1.25rem;
+}
+footer .icon-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+footer .icon-cards input {
+  appearance: none;
+  animation: footer-icon-animation 2s linear infinite;
+}
+footer .icon-cards input::after {
+  font: var(--fa-font-solid);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  transition: color 0.5s;
+  font-size: 3rem;
+}
+@media screen and (max-width: 900px) {
+  footer .icon-cards input::after {
+    font-size: 2rem;
+  }
+}
+footer .icon-cards input:hover::after {
+  display: inline-block;
+  transform: scale(1.075);
+}
+footer .icon-cards #mic:checked::after,
+footer .icon-cards #record:checked::after {
+  color: rgb(255, 0, 0);
+}
+footer .icon-cards #video:checked::after,
+footer .icon-cards #share:checked::after {
+  color: rgb(0, 255, 0);
+}
+footer .icon-cards #mic::after {
+  content: '\f3c9';
+}
+footer .icon-cards #video::after {
+  content: '\f03d';
+}
+footer .icon-cards #share::after {
+  content: '\f151';
+}
+footer .icon-cards #record::after {
+  content: '\f111';
+}
+footer button {
+  padding: 1.25rem 4rem;
+  border-radius: 0.5em;
+  background-color: rgb(155, 0, 0);
+  border: none;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+footer button:hover {
+  background-color: rgb(255, 0, 0);
+  transform: scale(1.025);
+}
+@media screen and (max-width: 900px) {
+  footer button {
+    padding: 1rem 2.75rem;
+  }
+}

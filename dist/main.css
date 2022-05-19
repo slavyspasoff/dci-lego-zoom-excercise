@@ -118,31 +118,31 @@ section .lego-cards i {
   animation: section-camera-animation 2s linear infinite;
 }
 section > div:nth-of-type(1) {
-  background-image: url(../images/student-1.jpeg);
+  background-image: url(./images/student-1.jpeg);
 }
 section > div:nth-of-type(2) {
-  background-image: url(../images/student-2.jpeg);
+  background-image: url(./images/student-2.jpeg);
 }
 section > div:nth-of-type(3) {
-  background-image: url(../images/student-3.jpeg);
+  background-image: url(./images/student-3.jpeg);
 }
 section > div:nth-of-type(4) {
-  background-image: url(../images/student-4.jpeg);
+  background-image: url(./images/student-4.jpeg);
 }
 section > div:nth-of-type(5) {
-  background-image: url(../images/student-5.jpeg);
+  background-image: url(./images/student-5.jpeg);
 }
 section > div:nth-of-type(6) {
-  background-image: url(../images/student-6.jpeg);
+  background-image: url(./images/student-6.jpeg);
 }
 section > div:nth-of-type(7) {
-  background-image: url(../images/student-7.jpeg);
+  background-image: url(./images/student-7.jpeg);
 }
 section > div:nth-of-type(8) {
-  background-image: url(../images/student-8.jpeg);
+  background-image: url(./images/student-8.jpeg);
 }
 section > div:nth-of-type(9) {
-  background-image: url(../images/student-9.jpeg);
+  background-image: url(./images/student-9.jpeg);
 }
 
 footer {
@@ -221,5 +221,3 @@ footer button:hover {
     padding: 1rem 2.75rem;
   }
 }
-
-/*# sourceMappingURL=main.css.map */

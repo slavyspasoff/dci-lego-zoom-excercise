@@ -1,0 +1,75 @@
+@use '../utils/variables' as v;
+@use '../utils/extends' as e;
+@use '../utils/mixins' as m;
+@use '../utils/keyframes' as q;
+footer {
+  @extend %bg-dark;
+  position: sticky;
+  bottom: 0;
+  @include m.d-flex(space-evenly);
+  padding: 1.25rem;
+  .icon-cards {
+    @include m.d-flex(center, center, column);
+    gap: 1rem;
+    input {
+      appearance: none;
+      animation: footer-icon-animation 2s linear infinite;
+      &::after {
+        font: var(--fa-font-solid);
+        cursor: pointer;
+        color: v.$clr-light-900;
+        transition: color 0.5s;
+        font-size: 3rem;
+        @media screen and (max-width: 900px) {
+          font-size: 2rem;
+        }
+      }
+      &:hover::after {
+        display: inline-block;
+        transform: scale(1.075);
+      }
+    }
+    #mic,
+    #record {
+      &:checked::after {
+        color: v.$clr-red-900;
+      }
+    }
+    #video,
+    #share {
+      &:checked::after {
+        color: v.$clr-green-900;
+      }
+    }
+    $icons: (
+      mic: '\f3c9',
+      video: '\f03d',
+      share: '\f151',
+      record: '\f111',
+    );
+
+    @each $id, $icon in $icons {
+      ##{$id} {
+        &::after {
+          content: '#{$icon}';
+        }
+      }
+    }
+  }
+  button {
+    padding: 1.25rem 4rem;
+    border-radius: 0.5em;
+    background-color: v.$clr-red-600;
+    border: none;
+    color: v.$clr-light-900;
+    transition: background-color 0.5s;
+    cursor: pointer;
+    &:hover {
+      background-color: v.$clr-red-900;
+      transform: scale(1.025);
+    }
+    @media screen and (max-width: 900px) {
+      padding: 1rem 2.75rem;
+    }
+  }
+}

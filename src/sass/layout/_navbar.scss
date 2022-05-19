@@ -1,0 +1,7 @@
+@use '../utils/variables' as v;
+@use '../utils/extends' as e;
+nav {
+  @extend %grid-center;
+  @extend %bg-dark;
+  height: 10rem;
+}

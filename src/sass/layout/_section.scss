@@ -1,0 +1,53 @@
+@use '../utils/variables' as v;
+@use '../utils/extends' as e;
+@use '../utils/mixins' as m;
+@use '../utils/keyframes' as k;
+section {
+  padding: 3rem 10rem;
+  background-color: v.$bg-dark-700;
+  @extend %grid-center;
+  grid-template-columns: repeat(auto-fit, minmax(37.5rem, 1fr));
+  gap: 3.5rem;
+
+  .lego-cards {
+    height: 30rem;
+    width: 100%;
+    max-width: 45rem;
+
+    border-radius: 1em;
+    position: relative;
+    p {
+      background-color: v.$bg-transparent;
+      padding: 0.5rem;
+      display: inline-block;
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      color: v.$clr-light-700;
+    }
+    i {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      color: v.$clr-green-600;
+      animation: section-camera-animation 2s linear infinite;
+    }
+  }
+  > div {
+    @extend %bg-img-center;
+  }
+
+  // BACKGROUNDS LOOP
+  $backgrounds: '../../images/student-1.jpeg', '../../images/student-2.jpeg',
+    '../../images/student-3.jpeg', '../../images/student-4.jpeg',
+    '../../images/student-5.jpeg', '../../images/student-6.jpeg',
+    '../../images/student-7.jpeg', '../../images/student-8.jpeg',
+    '../../images/student-9.jpeg';
+  $i: 0;
+  @each $background in $backgrounds {
+    $i: $i + 1;
+    > div:nth-of-type(#{$i}) {
+      background-image: url(#{$background});
+    }
+  }
+}

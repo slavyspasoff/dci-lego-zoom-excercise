@@ -1,0 +1,14 @@
+@use './variables' as v;
+
+%bg-dark {
+  background-color: v.$bg-dark-900;
+  color: v.$clr-light-900;
+}
+%grid-center {
+  display: grid;
+  place-items: center;
+}
+%bg-img-center {
+  background-size: cover;
+  background-position: center;
+}
